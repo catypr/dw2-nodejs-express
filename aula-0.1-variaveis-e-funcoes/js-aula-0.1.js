@@ -53,10 +53,10 @@ function Saudacao(nome){//PARÂMETRO
 }
 Saudacao('Catarine')//Argumento
 
-//FUNÇÃO COMMAIS DE UM PARÂMETRO
+//FUNÇÃO COMMIS DE UM PARÂMETRO
 function soma(n1, n2){
      let resultado = n1 + n2 
-     console.log(`A soma dos dois números foi $(resultado).`)
+     console.log(`A soma dos dois números foi ${(resultado)}.`)
 }
 let n1 = 6
 let n2 = 10
@@ -78,9 +78,9 @@ function parImpar(n){
 }
 let num = 4 
 console.log(parImpar(num))
-comsole.log(`O núemro ${num} é ${parImpar(num)}!`)
+comsole.log(`O número ${num} é ${parImpar(num)}!`)
 
-//FUNÃO ANÕNIMA
+//FUNÃO ANONIMA
 let dobro = function(x) {
     return x*2
 }
@@ -93,3 +93,24 @@ const Dobro = x => {// se for mais que um parâmetro ()
     return x*2
 }
 console.log(`Função dobro com Arrow Function. Resultado: ${Dobro(20)}.`)
+
+//ARROW FUNCTION COM MAIS DE UM PARÂMETRO
+const calc = (num1, operador, num2) => {
+    return eval(`${num1} ${operador} ${num2}`)
+}
+console.log(`O resultado da operação é ${calc(6, '*, 6')}.`)
+
+//SIMPLIFICANDO ARROW FUNCTION 
+const Calc = (num1, operador, num2) => eval(`${num1} ${operador} ${num2}`)
+console.log(`O resultado da operção é ${Calc(7, '*, 7')}.`)
+
+//IIFE- Imediately Invoked Function Expression
+//Função Imediata - última 
+const iife = (function() {
+    console.log("Estou sendo executado imediatamente...")
+})()
+
+//IIFE COM PARÂMETRO 
+const start = (function(app){
+    console.log(`Executando imdetiatamente o app ${app}.`)
+}("whatsappp")
